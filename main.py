@@ -6,15 +6,14 @@ points = []
 
 equation = input("Enter Enquation: ")
 
-for point in range(-20,21):
+for point in range(-20,20):
     equation_copy = equation.replace("X",str(point))
     solution = round(eval(equation_copy))
 
-    if solution < 20 and round(eval(equation_copy)) >= -20:
-        graph[solution+19][point+20] = "◼ "
-
-for point in range(len(points)):
-    print("("+str(point-10)+","+str(points[point])+")")
+    if solution < 20 and solution >= -20:
+        graph[solution+20][point+20] = "◼ "
+    print(point,end=" ")
+    print(solution)
 
 for row in graph:
     row.reverse()
