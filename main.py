@@ -1,5 +1,23 @@
-graph = [[" "," "," "," "," "," "," "," "," "," "]*10]
-print(graph)
+graph = [[" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "],
+         [" "," "," "," "," "," "," "," "," "," "]]
 
-euqation = input("Enter Enquation: ")
+points = []
+
+equation = input("Enter Enquation: ")
+
+for point in range(-10,11):
+    equation_copy = equation
+    
+    while equation_copy.find("X") != -1:
+        equation_copy[equation_copy("X")] = point
+    
+    points.append([point,eval(equation_copy)])
 
