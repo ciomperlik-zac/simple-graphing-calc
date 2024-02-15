@@ -11,7 +11,9 @@ for point in range(-20,21):
     solution = round(eval(equation_copy))
 
     if solution < 20 and round(eval(equation_copy)) >= -20:
-        graph[solution][point] = "◼ "
+        if point > 0:
+            point += 20
+        graph[solution][abs(point)] = "◼ "
 
 for point in range(len(points)):
     print("("+str(point-10)+","+str(points[point])+")")
