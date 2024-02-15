@@ -8,7 +8,10 @@ equation = input("Enter Enquation: ")
 
 for point in range(-20,20):
     equation_copy = equation.replace("X","("+str(point)+")")
-    solution = round(eval(equation_copy))
+    try:
+        solution = round(eval(equation_copy))
+    except ValueError:
+        continue
 
     if solution < 20 and solution >= -20:
         graph[solution+20][point+20] = "◼ "
